@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tab Manager</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="toolbar">
+        <h1>Tab Manager</h1>
+        <input id="searchInput" type="search" placeholder="Search tabs by title or URL..." />
+      </header>
+
+      <section class="actions-row">
+        <button id="saveSessionBtn" class="primary">Save Current Session</button>
+        <label class="toggle-wrap" title="Auto-discard inactive tabs using background alarm">
+          <input id="autoSuspendToggle" type="checkbox" />
+          Auto-suspend (30m)
+        </label>
+      </section>
+
+      <section>
+        <h2>Saved Sessions</h2>
+        <div id="sessionsContainer" class="sessions"></div>
+      </section>
+
+      <section>
+        <h2>Open Tabs</h2>
+        <div id="tabsContainer" class="groups"></div>
+      </section>
+    </main>
+
+    <template id="tabItemTemplate">
+      <article class="tab-item">
+        <img class="favicon" alt="" />
+        <div class="tab-content">
+          <p class="title"></p>
+          <p class="url"></p>
+        </div>
+        <div class="tab-actions">
+          <button class="pin-btn">Pin</button>
+          <button class="close-btn danger">Close</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>

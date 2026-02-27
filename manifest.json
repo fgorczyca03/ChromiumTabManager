@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Manager",
+  "description": "Search, group, and manage tabs with session save/restore.",
+  "version": "1.0.0",
+  "permissions": [
+    "tabs",
+    "storage",
+    "alarms"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_title": "Tab Manager",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "commands": {
+    "switch-to-next-tab": {
+      "suggested_key": {
+        "default": "Alt+Shift+Right"
+      },
+      "description": "Switch to the next tab in the current window"
+    },
+    "close-active-tab": {
+      "suggested_key": {
+        "default": "Alt+Shift+W"
+      },
+      "description": "Close the active tab"
+    }
+  }
+}
